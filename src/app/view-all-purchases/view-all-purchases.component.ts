@@ -12,7 +12,15 @@ export class ViewAllPurchasesComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.cars = [{ name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' }] as CarInsurance[];
+    this.cars = [
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
+      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' }] as CarInsurance[];
   }
   backtoMainMenu(): void {
     this.router.navigate(['']);
