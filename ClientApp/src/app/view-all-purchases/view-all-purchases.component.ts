@@ -20,7 +20,7 @@ export class ViewAllPurchasesComponent implements OnInit {
       { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
       { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
       { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' },
-      { name: 'adas', date: new Date(), familyName: 'saada', remarks: '1234' }] as CarInsurance[];
+      { name: 'miras', date: new Date(), familyName: 'safadi', remarks: 'asdasdasdasdasdasas' }] as CarInsurance[];
   }
   backtoMainMenu(): void {
     this.router.navigate(['']);
