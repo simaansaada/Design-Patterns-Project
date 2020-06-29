@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 ">
             <h5 class="text-center" style="font-weight: bold;">
-                New car insurance
+                New {{type}} insurance
             </h5>
         </div>
     </div>
@@ -15,7 +15,10 @@
             Name:
         </div>
         <div class="col-8 d-flex justify-content-center">
-            <input class="form-control h-75 m-0">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Exmaple: *John* Doe</mat-label>
+                <input matInput [(ngModel)]="insurance.name">
+            </mat-form-field>
         </div>
     </div>
     <div class="row">
@@ -23,7 +26,10 @@
             Family name:
         </div>
         <div class="col-8 d-flex justify-content-center">
-            <input class="form-control h-75 m-0">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Exmaple: John *Doe*</mat-label>
+                <input matInput [(ngModel)]="insurance.familyName">
+            </mat-form-field>
         </div>
     </div>
     <div class="row">
@@ -31,7 +37,12 @@
             Date:
         </div>
         <div class="col-8 d-flex justify-content-center">
-            <input class="form-control h-75 m-0">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="insurance.date" name="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
         </div>
     </div>
     <div class="row">
@@ -39,7 +50,9 @@
             Remarks:
         </div>
         <div class="col-8 d-flex justify-content-center">
-            <input class="form-control h-75 m-0">
+            <mat-form-field appearance="fill" class="w-100">
+                <input matInput [(ngModel)]="insurance.remarks">
+            </mat-form-field>
         </div>
     </div>
     <div class="row">
@@ -53,8 +66,13 @@
             </button>
         </div>
         <div class="col-6 d-flex justify-content-center">
-            <button type="button"  class="btn btn-primary w-100">
-                Save
+            <button type="button" [disabled]="isLoading" (click)="saveInsurance()" class="btn btn-primary w-100">
+                <ng-container *ngIf="!isLoading">
+                    Save
+                </ng-container>
+                <ng-container *ngIf="isLoading">
+                    Saving...
+                </ng-container>
             </button>
         </div>
     </div>

@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 ">
+            <h5 class="text-center" style="font-weight: bold;">
+                New car insurance
+            </h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col p-2">
+        </div>
+    </div>
+        <div class="row">
+            <div class="col d-flex justify-content-start align-items-center">
+                Name:
+            </div>
+            <div class="col-8 d-flex justify-content-center">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Exmaple: *John* Doe</mat-label>
+                    <input matInput [(ngModel)]="insurance.name" >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-start align-items-center">
+                Family name:
+            </div>
+            <div class="col-8 d-flex justify-content-center">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Exmaple: John *Doe*</mat-label>
+                    <input matInput [(ngModel)]="insurance.familyName">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-start align-items-center">
+                Date:
+            </div>
+            <div class="col-8 d-flex justify-content-center">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="insurance.date" name="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-start align-items-center">
+                Remarks:
+            </div>
+            <div class="col-8 d-flex justify-content-center">
+                <mat-form-field appearance="fill" class="w-100">
+                    <input matInput [(ngModel)]="insurance.remarks">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col p-2">
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-6 d-flex justify-content-center">
+                <button type="button" (click)="backtoMainMenu()" class="btn btn-primary w-100">
+                    Back
+                </button>
+            </div>
+            <div class="col-6 d-flex justify-content-center">
+                <button type="button" (click)="saveCarInsurance()" class="btn btn-primary w-100">
+                    Save
+                </button>
+            </div>
+        </div>
+</div>
