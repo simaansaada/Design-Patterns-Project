@@ -32,7 +32,7 @@ public class InsuranceController {
 		} catch (Exception e) {
 			throw e;
 		}
-		return ResponseEntity.ok().body(isAdded);
+		return ResponseEntity.ok().header("Access-Control-Allow-Origin", "*").body(isAdded);
 	}
 
 	@GetMapping("/viewAllPurchases")
@@ -44,7 +44,7 @@ public class InsuranceController {
 		} catch (Exception e) {
 			throw e;
 		}
-		return ResponseEntity.ok().body(insurances);
+		return ResponseEntity.ok().header("Access-Control-Allow-Origin", "*").body(insurances);
 
 	}
 
