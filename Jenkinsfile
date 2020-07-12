@@ -1,5 +1,10 @@
 pipeline {
   agent any
+  stage('getting the project code') {
+          steps {
+            git(url: 'https://github.com/simaansaada/Design-Patterns-Project', branch: 'master', credentialsId: 'w')
+          }
+        }
   stages {
     stage('setting up the environment') {
       parallel {
@@ -18,11 +23,7 @@ npm install'''
           }
         }
 
-        stage('getting the project code') {
-          steps {
-            git(url: 'https://github.com/simaansaada/Design-Patterns-Project', branch: 'master', credentialsId: 'w')
-          }
-        }
+        
 
       }
     }
