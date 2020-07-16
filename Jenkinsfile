@@ -9,7 +9,7 @@ npm install
 '''
       }
     }
-    
+
     stage('buiding') {
       steps {
         sh '''export PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin 
@@ -18,11 +18,10 @@ ng build --prod'''
       }
     }
 
-    
-
     stage('dfsfdg') {
       steps {
         sh 'echo \'ss\''
+        sh 'echo'
       }
     }
 
